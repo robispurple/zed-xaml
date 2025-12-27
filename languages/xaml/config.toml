@@ -1,0 +1,9 @@
+name = "XAML"
+grammar = "xaml"
+path_suffixes = ["xaml"]
+first_line_pattern = '^<.*xaml'
+block_comment = ["<!-- ", " -->"]
+brackets = [{ start = "<", end = ">", close = true, newline = true }]
+# For Prettier treat xaml as plain xml
+prettier_parser_name = "xml"
+prettier_plugins = ["@prettier/plugin-xml"]
