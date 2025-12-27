@@ -1,0 +1,7 @@
+id = "xaml"
+name = "XAML"
+description = "XAML support for Zed."
+version = "0.0.1"
+schema_version = 1
+authors = ["robispurple"]
+repository = "https://github.com/robispurple/zed-xaml.git"
