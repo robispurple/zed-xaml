@@ -166,3 +166,39 @@
 (Comment) @comment
 
 (ERROR) @error
+
+;; --- End of Existing XML rules ---
+
+;; --- XAML Specific Highlighting ---
+
+;; Highlight XAML Directives (e.g., x:Key, x:Class, x:Name)
+((Attribute
+  (Name) @keyword)
+  (#match? @keyword "^x:"))
+
+;; Highlight Attached Properties (e.g., Grid.Row, Canvas.Top)
+;; This targets the '.' used in class-property relationships
+((Attribute
+  (Name) @variable.parameter)
+  (#match? @variable.parameter "\\."))
+
+;; Highlight Namespaces (e.g., xmlns, xmlns:x)
+((Attribute
+  (Name) @type)
+  (#match? @type "^xmlns"))
+
+;; Markup Extensions (e.g., {Binding ...}, {StaticResource ...})
+;; We highlight the entire string differently if it starts with '{'
+((Attribute
+  (AttValue) @string.special)
+  (#match? @string.special "^['\" ]+\\{"))
+
+;; Highlight the punctuation for tags and brackets
+[
+ "<" ">"
+ "</" "/>"
+] @punctuation.bracket
+
+[ "\"" "'" ] @punctuation.delimiter
+
+;; --- End of XAML rules ---
