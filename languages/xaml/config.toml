@@ -1,7 +1,8 @@
 name = "XAML"
-grammar = "xaml"
+grammar = "xml"
 path_suffixes = ["xaml"]
-first_line_pattern = '^<.*xaml'
+# Look for common XAML root elements like Window, UserControl, or Application
+first_line_pattern = '^<.(Window|Application|Page|ContentPage|UserControl|ResourceDictionary|ScrollView )'
 block_comment = ["<!-- ", " -->"]
 brackets = [{ start = "<", end = ">", close = true, newline = true }]
 # For Prettier treat xaml as plain xml
