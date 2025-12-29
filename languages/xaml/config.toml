@@ -2,7 +2,7 @@ name = "XAML"
 grammar = "xml"
 path_suffixes = ["xaml"]
 # Look for common XAML root elements. If these are not found the Zed should identify the file as XML which should highlight properly.
-first_line_pattern = '^<.(Window|Application|Page|ContentPage|UserControl|ResourceDictionary|ScrollView )'
+first_line_pattern = '^<(Window|Application|Page|ContentPage|UserControl|ResourceDictionary|ScrollView)'
 block_comment = ["<!-- ", " -->"]
 brackets = [{ start = "<", end = ">", close = true, newline = true }]
 # For Prettier treat xaml as plain xml
