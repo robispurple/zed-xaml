@@ -5,3 +5,10 @@ version = "0.0.1"
 schema_version = 1
 authors = ["robispurple"]
 repository = "https://github.com/robispurple/zed-xaml.git"
+
+# Use Tree-sitter XML grammar for the time being since XAML is not yet supported by Tree-sitter
+[grammars.xml]
+repository = "https://github.com/tree-sitter-grammars/tree-sitter-xml"
+commit = "863dbc381f44f6c136a399e684383b977bb2beaa"
+name = "xaml" # This name is required in order for Zed to properly link with languages\xaml\config.toml
+path = "xaml" # This name is required in order for Zed to properly link with languages\xaml\config.toml
