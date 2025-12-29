@@ -1,0 +1,22 @@
+<Window
+    x:Class="XamlFeatureTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamlFeatureTest">
+
+    <Grid>
+        <NavigationView PaneDisplayMode="Left">
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Home" Icon="Home" />
+                <NavigationViewItem Content="Settings" Icon="Setting" />
+            </NavigationView.MenuItems>
+
+            <StackPanel>
+                <TextBlock Text="{x:Bind ViewModel.Header}" />
+                <Button Content="Click Me" Command="{x:Bind ViewModel.ClickCommand}" />
+            </StackPanel>
+
+        </NavigationView>
+    </Grid>
+</Window>
