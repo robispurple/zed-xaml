@@ -189,16 +189,9 @@
 
 ;; Markup Extensions (e.g., {Binding ...}, {StaticResource ...})
 ;; We highlight the entire string differently if it starts with '{'
+;: Further highlighting is not possible without creating a custom Tree-sitter grammer. This can be done in the future.
 ((Attribute
   (AttValue) @string.special)
-  (#match? @string.special "^['\" ]+\\{"))
-
-;; Highlight the punctuation for tags and brackets
-[
- "<" ">"
- "</" "/>"
-] @punctuation.bracket
-
-[ "\"" "'" ] @punctuation.delimiter
+  (#match? @string.special "^['\" ]*\\{"))
 
 ;; --- End of XAML rules ---
